@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Investments
+{% endblock %}
+
+{% block main %}
+    <h1>Current Stocks</h1>
+    <table class='table table-striped table-bordered table-hover'>
+        <tr>
+            <!-- <th scope="col"></th> -->
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price Bought</th>
+            <th scope="col">CurrentPrice</th>
+            <th scope="col">Date Purchased</th>
+            <th scope="col">Total</th>
+        </tr>
+        {% for transaction in transactions %}
+                <tr>
+                    <!-- <th scope="row"></th> -->
+                    <td scope="row">{{ transaction['symbol'] }}</td>
+                    <td>{{ transaction['amount'] }}</td>
+                    <td>{{ transaction['price_at_purchase'] }}</td>
+                    <td>{{ transaction['currentPrice'] }}</td>
+                    <td>{{ transaction['date_purchased'] }}</td>
+                    <td>{{ transaction['total'] }}</td>
+                </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th>CASH</th>
+            <td>{{ cash }}</th>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th>TOTAL</th>
+            <td>{{ totalValue }}</th>
+        </tr>
+    </table>
+{% endblock %}
+

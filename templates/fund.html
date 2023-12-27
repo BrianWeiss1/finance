@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Funding
+{% endblock %}
+
+{% block main %}
+<h1>How much funding would you like?</h1>
+    <form action="/fund" method="post" type='submit'>
+        <input name='amount' autofocus autocomplete='off' type='text' placeholder='i.e. 1000'>
+        <button type='submit'>Submit</button>
+    </form>
+{% endblock %}

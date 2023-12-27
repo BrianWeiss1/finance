@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action='/register' type='submit' method='post'>
+        <input type='text' name='username' placeholder="Username" autofocus autocomplete='off'>
+        <input type='password' name='password' placeholder="Password" autofocus autocomplete='off'>
+        <input type='password' name='confirmation' placeholder="Confirmation" autofocus autocomplete='off'>
+        <button type='submit'>Make Account</button>
+    </form>
+    <!-- Add js code to check if password is the correct password -->
+{% endblock %}

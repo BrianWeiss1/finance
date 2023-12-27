@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stonks
+{% endblock %}
+
+{% block main %}
+<h1>Selling Stonks Terminal</h1>
+    <form action="/sell" method="post" type='submit'>
+        <select name='symbol'>
+            <option disabled selected>Select Stock</option>
+            {% for stock in stocks %}
+                <option>{{ stock['symbol'] }}</option>
+            {% endfor %}
+        </select>
+        <input placeholder='i.e. 5 (int)' name='shares' autocomplete='off' type='text'>
+        <button type='submit'>Submit</button>
+    </form>
+{% endblock %}

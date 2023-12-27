@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<h1>What is the stock quote?</h1>
+    <form action="/quote" method="post" type='submit'>
+        <input name='symbol' autofocus autocomplete='off' type='text' placeholder='i.e. AAPL'>
+        <button type='submit'>Submit</button>
+    </form>
+{% endblock %}
